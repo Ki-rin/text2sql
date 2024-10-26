@@ -1,6 +1,9 @@
 VANNA: vanna.ai/blog/vanna-open-source.html <- simple prompt engeneered
 WREN: getwren.ai/  <- needs to load in you DB; limited connectivity | TBD - contains HELM chart
 ----
+https://medium.com/wrenai/what-we-learned-from-pinterests-text-to-sql-solution-840fa5840635
+
+----
 SQLChat	- AI-powered SQL generator from natural language, supports many databases.	SQL generation
 https://github.com/sqlchat/sqlchat
 https://sqlchat.ai
