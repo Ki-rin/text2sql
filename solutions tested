@@ -1,2 +1,20 @@
 VANNA: vanna.ai/blog/vanna-open-source.html <- simple prompt engeneered
 WREN: getwren.ai/  <- needs to load in you DB; limited connectivity | TBD - contains HELM chart
+----
+SQLChat	- AI-powered SQL generator from natural language, supports many databases.	SQL generation
+https://github.com/sqlchat/sqlchat
+https://sqlchat.ai
+
+DataLine	- Query data with natural language, get SQL, tables, and charts. Simpler interface than Vanna.	Data analysis & visualization
+https://github.com/RamiAwar/dataline
+
+AIHelperBot	- Build SQL queries without SQL knowledge; supports SQL & NoSQL.	SQL generation
+https://proaitools.net/ai_tools/tools/ai-helper-bot [private tool]
+
+
+
+------
+Data Visualization
+Apache Superset	- Data exploration and visualization platform with a rich feature set.	Data analysis & visualization
+Metabase	- User-friendly tool for asking questions and learning from data.	Data analysis & visualization
+Redash	- Connect, query, and visualize data from various sources; build and share dashboards.	Data analysis & visualization
