@@ -1,0 +1,13 @@
+SELECT table_name, column_name, data_type
+FROM all_tab_columns
+WHERE owner = 'YOUR_SCHEMA_NAME'
+ORDER BY table_name, column_id;
+
+----
+PROMPT construction by Vanna ai
+1. System Role Setup   - 	The AI is assigned the role of a SQLite expert and is expected to generate SQL queries based on the context.	{'role': 'system', 'content': "You are a SQLite expert. Please help to generate a SQL query to answer the question. Your response should ONLY be based on the given context and follow the response guidelines and format instructions."}
+2. Database Schema - 	The schema outlines the structure of the database, listing the tables, columns, primary keys, foreign keys, and constraints.	"===Tables \nCREATE TABLE [Artist]...\nCREATE TABLE [Album]...\nCREATE TABLE [Track]...\nCREATE TABLE [Playlist]...\nCREATE TABLE [InvoiceLine]...\nCREATE TABLE [Genre]...\nCREATE TABLE [Customer]...\nCREATE TABLE [Invoice]...\nCREATE TABLE [Employee]..."
+3. Additional Context	- Clarifies any specific considerations, like the database type and format for certain data types (e.g., date handling in SQLite).	This is a SQLite database. For dates remember to use SQLite syntax.
+4. Response Guidelines	- Provides rules for the AI to follow when generating SQL queries, including when to create an intermediate query or explain issues if the context is insufficient.	"1. If the provided context is sufficient, please generate a valid SQL query without any explanations for the question.\n2. If the provided context is almost sufficient but requires knowledge of a specific string in a particular column, please generate an intermediate SQL query...\n3. If the provided context is insufficient, please explain why it can't be generated..."
+5. User Query Example 1	A user asks a question related to the database, like retrieving the top 10 artists by sales.	{'role': 'user', 'content': 'What are the top 10 artists by sales?'}
+6. AI Response Example 1	The AI generates a valid SQL query in response to the user’s question, using the schema to correctly join tables and calculate totals.	'SELECT a.ArtistId, a.Name, SUM(il.Quantity) AS TotalSales\nFROM Artist a\nINNER JOIN Album al ON a.ArtistId = al.ArtistId\nINNER JOIN Track t ON al.AlbumId = t.AlbumId\nINNER JOIN InvoiceLine il ON t.TrackId = il.TrackId\nGROUP BY a.ArtistId, a.Name\nORDER BY TotalSales DESC\nLIMIT 10;'
